@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, Zuzu</title>
+
+    <meta name="description" content="A little birthday website made especially for Kritika Raj.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="scroll-locked">
+
+    <!-- =========================================================
+     LOADER
+========================================================= -->
+
+    <div class="loader" id="loader">
+
+        <div class="loader-balloons">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="loader-text">
+            <span>Something special is being prepared...</span>
+            <strong>For Zuzu</strong>
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+     GLOBAL DECORATION
+========================================================= -->
+
+    <div class="grain"></div>
+    <div class="cursor-glow"></div>
+    <div class="particle-layer" id="particleLayer"></div>
+    <div class="balloon-layer" id="balloonLayer"></div>
+    <div class="sparkle-layer" id="sparkleLayer"></div>
+
+
+    <!-- =========================================================
+     MUSIC
+========================================================= -->
+
+    <audio id="music" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-button magnetic" id="musicButton">
+        <span class="music-icon"></span>
+        <span>Music</span>
+    </button>
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <header class="hero" id="top">
+
+        <!-- Decorative balloons, mixed sizes / depths -->
+
+        <div class="hero-balloon balloon-two size-sm depth-1"></div>
+        <div class="hero-balloon balloon-three size-md depth-2"></div>
+        <div class="hero-balloon balloon-four size-sm depth-1"></div>
+        <div class="hero-balloon balloon-five size-xs depth-1"></div>
+        <div class="hero-balloon balloon-six size-md depth-2"></div>
+        <div class="hero-balloon balloon-seven size-lg depth-3"></div>
+        <div class="hero-balloon balloon-eight size-xs depth-1"></div>
+
+        <div class="hero-ribbon ribbon-left"></div>
+        <div class="hero-ribbon ribbon-right"></div>
+
+
+        <!-- Flower illustrations -->
+
+        <div class="flower flower-a size-lg">
+            <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                class="petal"></span><span class="petal"></span>
+            <i class="pistil"></i>
+        </div>
+
+        <div class="flower flower-b size-md">
+            <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                class="petal"></span><span class="petal"></span>
+            <i class="pistil"></i>
+        </div>
+
+        <div class="flower flower-c size-sm">
+            <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                class="petal"></span><span class="petal"></span>
+            <i class="pistil"></i>
+        </div>
+
+
+        <div class="hero-content">
+
+            <div class="eyebrow reveal">
+                A little birthday page
+            </div>
+
+            <h1 class="hero-title reveal">
+                Happy Birthday
+                <span>Kritika</span>
+            </h1>
+
+            <p class="hero-subtitle reveal">
+                For the girl I've known since December 2024,
+                and somehow still haven't gotten rid of.
+            </p>
+
+
+            <!-- ENVELOPE -->
+
+            <div class="card-scene reveal" id="cardScene">
+
+                <div class="card-shadow"></div>
+
+                <button class="envelope" id="envelope" aria-label="Open envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div class="envelope-note" id="envelopeNote">
+                        <span class="note-small">A tiny reminder</span>
+                        <p>You're stuck with me,</p>
+                        <h3>Zuzu.</h3>
+                        <span class="note-sign">— your Zazu</span>
+                    </div>
+
+                    <div class="envelope-flap">
+
+                        <div class="envelope-sticker sticker-flower" aria-hidden="true">
+                        </div>
+
+                    </div>
+
+                    <div class="envelope-seal">K</div>
+
+                </button>
+
+            </div>
+
+
+            <button class="open-card-button magnetic" id="openCardButton">
+                Open the envelope
+                <span>→</span>
+            </button>
+
+            <div class="scroll-hint" id="scrollHint">
+                <span></span>
+                Scroll slowly
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================================
+     01 — THE BEGINNING
+========================================================= -->
+
+        <section class="section beginning-section" id="beginning">
+
+            <div class="side-deco deco-left" style="top:25%; left:50px">
+                <div class="flower size-md tint-sage" style="--deco-rotate:-8deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-left" style="top:60%">
+                <div class="mini-balloon size-sm tint-peach" style="--deco-rotate:6deg"></div>
+            </div>
+            <div class="side-deco deco-right" style="top:14%">
+                <div class="deco-cupcake tint-peach">
+                    <div class="cup-base"></div>
+                    <div class="cup-frosting"></div>
+                    <div class="cup-cherry"></div>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:72%">
+                <div class="flower size-sm tint-sage" style="--deco-rotate:10deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+
+            <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+            <div class="section-heading reveal">
+                <span>01</span>
+                <p>Where all of this comes from</p>
+                <h2>
+                    It started in December 2024.
+                </h2>
+            </div>
+
+            <div class="postcard-intro reveal">
+                <p>
+                    Neither of us probably expected that a simple friendship
+                    would turn into this much history.
+                </p>
+            </div>
+
+            <div class="postcard-scene">
+
+                <figure class="postcard-photo reveal-3d" style="--rotation:-5deg">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo1.jpg" alt="Vintage friendship memory">
+
+                </figure>
+
+                <div class="postcard-note reveal">
+
+                    <span class="note-date">DECEMBER 2024</span>
+
+                    <h3>
+                        Somehow,
+                        <br>
+                        we became friends.
+                    </h3>
+
+                    <p>
+                        And then life decided to give us approximately
+                        hundreds of arguments, ∞ conversations and a ridiculous
+                        number of memories.
+                    </p>
+
+                    <span class="note-page">— page one</span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-balloon balloon-three size-md depth-2"></div>
+
+            <div class="flower flower-a size-lg" style="position: absolute; top: 1000px; left: 30px; z-index: -1;">
+                <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                    class="petal"></span><span class="petal"></span>
+                <i class="pistil"></i>
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     02 — TIMELINE
+========================================================= -->
+
+        <section class="section timeline-section" id="timeline">
+
+            <div class="side-deco deco-left" style="top:10%">
+                <div class="mini-balloon size-md tint-blue" style="--deco-rotate:-6deg"></div>
+            </div>
+            <div class="side-deco deco-left" style="top:66%">
+                <div class="flower size-sm tint-yellow" style="--deco-rotate:8deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:22%">
+                <div class="flower size-md tint-blue" style="--deco-rotate:-10deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:78%">
+                <div class="deco-cupcake tint-yellow">
+                    <div class="cup-base"></div>
+                    <div class="cup-frosting"></div>
+                    <div class="cup-cherry"></div>
+                </div>
+            </div>
+
+            <div class="timeline-decoration">
+                <div class="mini-balloon size-sm tint-pink" style="top:700px; left:20px"></div>
+            </div>
+
+
+            <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+            <div class="section-heading reveal">
+                <span>02</span>
+                <p>Something along the way</p>
+                <h2>
+                    A friendship made of
+                    <br>
+                    everything.
+                </h2>
+            </div>
+
+
+            <div class="timeline">
+
+                <svg class="timeline-svg" viewBox="0 0 1000 1200" preserveAspectRatio="none">
+                    <path class="timeline-path" d="
+                    M500 0
+                    C300 200, 700 300, 500 480
+                    C300 660, 700 780, 500 960
+                    C400 1080, 600 1120, 500 1200
+                " />
+                </svg>
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-side timeline-left">
+                        <span class="timeline-date">DECEMBER 2024</span>
+
+                        <h3>
+                            The beginning.
+                        </h3>
+
+                        <p>
+                            Somewhere along the way,
+                            a friendship started.
+                        </p>
+                    </div>
+
+                    <div class="timeline-node">
+                        <span>01</span>
+                    </div>
+
+                    <div class="timeline-art">
+                        <div class="tiny-photo">
+                            <img src="photos/photo1.jpg" alt="Memory">
+                        </div>
+                    </div>
+
+                </article>
+
+
+
+                <article class="timeline-item reverse reveal">
+
+                    <div class="timeline-art">
+                        <div class="tiny-photo rotate-left">
+                            <img src="photos/photo2.jpg" alt="Memory">
+                        </div>
+                    </div>
+
+                    <div class="timeline-node">
+                        <span>02</span>
+                    </div>
+
+                    <div class="timeline-side timeline-right">
+
+                        <span class="timeline-date">
+                            THEN CAME THE FIGHTS
+                        </span>
+
+                        <h3>
+                            Two stubborn people.
+                        </h3>
+
+                        <p>
+                            We discovered that apparently almost
+                            anything can become an argument.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-side timeline-left">
+
+                        <span class="timeline-date">
+                            SOMEHOW
+                        </span>
+
+                        <h3>
+                            We always fix it.
+                        </h3>
+
+                        <p>
+                            That's the strange thing about us. No matter
+                            how annoyed we get, somehow we find our way back.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-node">
+                        <span>03</span>
+                    </div>
+
+                    <div class="timeline-art">
+
+                        <div class="tiny-photo rotate-right">
+
+                            <img src="photos/photo3.jpg" alt="Memory">
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="timeline-item reverse reveal">
+
+                    <div class="timeline-art">
+
+                        <div class="timeline-sticker">
+                            laugh
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-node">
+                        <span>04</span>
+                    </div>
+
+                    <div class="timeline-side timeline-right">
+
+                        <span class="timeline-date">
+                            AND THEN
+                        </span>
+
+                        <h3>
+                            We laugh again.
+                        </h3>
+
+                        <p>
+                            And eventually the argument becomes another
+                            story we laugh about later.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-side timeline-left">
+
+                        <span class="timeline-date">
+                            RIGHT NOW
+                        </span>
+
+                        <h3>
+                            Still here.
+                        </h3>
+
+                        <p>
+                            Still talking. Still arguing.
+                            Still fixing. Still friends.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-node final-node">
+                        <span>05</span>
+                    </div>
+
+                    <div class="timeline-art">
+
+                        <div class="tiny-photo final-photo">
+
+                            <img src="photos/photo4.jpg" alt="Memory">
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     03 — EFFORT
+========================================================= -->
+
+        <section class="section effort-section" id="effort">
+
+            <div class="side-deco deco-left" style="top:8%">
+                <div class="deco-cupcake tint-rose">
+                    <div class="cup-base"></div>
+                    <div class="cup-frosting"></div>
+                    <div class="cup-cherry"></div>
+                </div>
+            </div>
+            <div class="side-deco deco-left" style="top:68%">
+                <div class="flower size-md tint-peach" style="--deco-rotate:9deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:16%">
+                <div class="mini-balloon size-md tint-peach" style="--deco-rotate:-7deg"></div>
+            </div>
+            <div class="side-deco deco-right" style="top:74%">
+                <div class="flower size-sm tint-rose" style="--deco-rotate:-9deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+
+            <div class="floating-note note-one">
+                showing up
+            </div>
+
+            <div class="floating-note note-two">
+                staying
+            </div>
+
+            <div class="floating-note note-three">
+                fixing things
+            </div>
+
+
+            <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+            <div class="section-heading reveal">
+                <span>03</span>
+                <p>Something I should probably admit</p>
+                <h2>
+                    You put in more effort.
+                </h2>
+            </div>
+
+
+            <div class="effort-layout">
+
+                <div class="effort-illustration reveal">
+
+                    <div class="effort-paper">
+
+                        <div class="paper-tape"></div>
+
+                        <span class="hand-label">
+                            I notice it.
+                        </span>
+
+                        <div class="effort-list">
+
+                            <div>
+                                <span>01</span>
+                                <strong>Checking in</strong>
+                            </div>
+
+                            <div>
+                                <span>02</span>
+                                <strong>Fixing things</strong>
+                            </div>
+
+                            <div>
+                                <span>03</span>
+                                <strong>Understanding</strong>
+                            </div>
+
+                            <div>
+                                <span>04</span>
+                                <strong>Staying</strong>
+                            </div>
+
+                            <div>
+                                <span>05</span>
+                                <strong>Caring</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="paper-flower">
+                            <i></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="effort-copy reveal">
+
+                    <div class="mini-label">
+                        Honestly
+                    </div>
+
+                    <h3>
+                        You probably put more effort into
+                        this friendship than I have.
+                    </h3>
+
+                    <p>
+                        And I don't want this birthday page to just be a collection
+                        of pretty animations.
+                    </p>
+
+                    <p>
+                        I want you to know that I actually notice the things you do.
+                        Even the small ones.
+                    </p>
+
+                    <p>
+                        The checking in.
+                        The fixing.
+                        The forgiving.
+                        The staying.
+                    </p>
+
+                    <p class="handwritten">
+                        I should say thank you more often.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     04 — A SMALL CONFESSION
+========================================================= -->
+
+        <section class="section confession-section" id="confession">
+
+            <div class="side-deco deco-left" style="top:12%">
+                <div class="flower size-md tint-rose" style="--deco-rotate:-11deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-left" style="top:76%">
+                <div class="mini-balloon size-sm tint-yellow" style="--deco-rotate:5deg"></div>
+            </div>
+            <div class="side-deco deco-right" style="top:18%">
+                <div class="deco-cupcake tint-rose">
+                    <div class="cup-base"></div>
+                    <div class="cup-frosting"></div>
+                    <div class="cup-cherry"></div>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:70%">
+                <div class="flower size-sm tint-yellow" style="--deco-rotate:8deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+
+            <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+            <div class="section-heading reveal">
+
+                <span>04</span>
+
+                <p>
+                    A small confession
+                </p>
+
+                <h2>
+                    Things I owe you
+                    <br>
+                    a sorry for.
+                </h2>
+
+            </div>
+
+
+            <div class="confession-board reveal">
+
+                <div class="confession-string"></div>
+
+                <button class="confession-note note-confession-a">
+                    <span>01</span>
+                    For being stubborn — especially when saying
+                    "sorry" would have been significantly easier.
+                </button>
+
+                <button class="confession-note note-confession-b">
+                    <span>02</span>
+                    For the unnecessary arguments. Some of those
+                    genuinely had no reason to exist.
+                </button>
+
+                <button class="confession-note note-confession-c">
+                    <span>03</span>
+                    For making things harder, when both of us
+                    already knew what needed to be fixed.
+                </button>
+
+                <button class="confession-note note-confession-d">
+                    <span>04</span>
+                    For every time I annoyed you — which,
+                    realistically, is an ongoing project.
+                </button>
+
+                <button class="confession-note note-confession-e">
+                    <span>05</span>
+                    For not saying thank you enough.
+                    This one matters more than all the others.
+                </button>
+
+                <div class="confession-sticker">
+                    officially<br>
+                    unofficial
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     05 — THE LETTER
+========================================================= -->
+
+        <section class="section letter-section" id="letter">
+
+            <div class="side-deco deco-left" style="top:10%">
+                <div class="mini-balloon size-md tint-yellow" style="--deco-rotate:-6deg"></div>
+            </div>
+            <div class="side-deco deco-left" style="top:72%">
+                <div class="flower size-sm tint-peach" style="--deco-rotate:7deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:16%">
+                <div class="flower size-md tint-yellow" style="--deco-rotate:-9deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:78%">
+                <div class="deco-cupcake tint-peach">
+                    <div class="cup-base"></div>
+                    <div class="cup-frosting"></div>
+                    <div class="cup-cherry"></div>
+                </div>
+            </div>
+
+            <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+            <div class="section-heading reveal">
+                <span>05</span>
+                <p>The part where I actually get serious</p>
+                <h2>
+                    Okay, Kritika.
+                </h2>
+            </div>
+
+
+            <div class="letter-envelope-deco reveal-3d" style="--rotation:-2deg">
+                <div class="deco-back"></div>
+                <div class="deco-flap"></div>
+                <div class="deco-seal">K</div>
+            </div>
+
+
+            <article class="real-letter reveal">
+
+                <div class="real-letter-top">
+                    <span>Dear Kritika,</span>
+                    <span>♡</span>
+                </div>
+
+                <div class="real-letter-body">
+
+                    <p>Kritika,</p>
+
+                    <p>
+                        Okay, before you say anything — yes, I actually put
+                        effort into making this.
+                    </p>
+
+                    <p>
+                        And honestly, there are a lot of things I could say
+                        about our friendship, but maybe the easiest place to
+                        start is December 2024.
+                    </p>
+
+                    <p>
+                        That's when our friendship started.
+                    </p>
+
+                    <p>
+                        I don't think either of us knew where it would go.
+                    </p>
+
+                    <p>
+                        And somehow, here we are.
+                    </p>
+
+                    <p>
+                        We've had good days, stupid conversations, ridiculous
+                        jokes and some genuinely great memories.
+                    </p>
+
+                    <p>
+                        We've also had fights.
+                    </p>
+
+                    <p>
+                        A lot of them.
+                    </p>
+
+                    <p>
+                        Sometimes over the dumbest things imaginable.
+                    </p>
+
+                    <p>
+                        There have been moments when we've both been annoyed,
+                        irritated, stubborn and probably convinced that the
+                        other person was impossible.
+                    </p>
+
+                    <p>
+                        But somehow...
+                    </p>
+
+                    <p>
+                        we always fix it.
+                    </p>
+
+                    <p>
+                        And I think that's one of my favourite things about us.
+                    </p>
+
+                    <p>
+                        Our friendship isn't special because we never fight.
+                    </p>
+
+                    <p>
+                        It's special because we don't let the fights become
+                        the end.
+                    </p>
+
+                    <p>
+                        And I want to admit something too.
+                    </p>
+
+                    <p>
+                        You have probably put more effort into this friendship
+                        than I have.
+                    </p>
+
+                    <p>
+                        You've tried to fix things when I was being stubborn.
+                    </p>
+
+                    <p>
+                        You've cared about things even when I didn't realise
+                        how much they mattered.
+                    </p>
+
+                    <p>
+                        You've made the effort to keep the friendship going.
+                    </p>
+
+                    <p>
+                        And I don't say thank you for that nearly enough.
+                    </p>
+
+                    <p>
+                        So...
+                    </p>
+
+                    <p class="letter-emphasis">
+                        thank you.
+                    </p>
+
+                    <p>
+                        For staying.
+                    </p>
+
+                    <p>
+                        For caring.
+                    </p>
+
+                    <p>
+                        For putting up with me.
+                    </p>
+
+                    <p>
+                        For all the random conversations.
+                    </p>
+
+                    <p>
+                        For every laugh.
+                    </p>
+
+                    <p>
+                        For every argument that somehow became another story
+                        we laugh about later.
+                    </p>
+
+                    <p>
+                        And for being the kind of person who doesn't just walk
+                        away when things get difficult.
+                    </p>
+
+                    <p>
+                        On your birthday, I genuinely hope you get everything
+                        you deserve.
+                    </p>
+
+                    <p>
+                        I hope this year gives you reasons to smile more, worry
+                        less, dream bigger and enjoy every little thing.
+                    </p>
+
+                    <p>
+                        I hope you meet amazing people, experience amazing
+                        things and create memories that you'll remember for
+                        years.
+                    </p>
+
+                    <p>
+                        And I hope our friendship gets a lot more memories too.
+                    </p>
+
+                    <p>
+                        More random conversations.
+                    </p>
+
+                    <p>
+                        More stupid jokes.
+                    </p>
+
+                    <p>
+                        More arguments that we'll eventually laugh about.
+                    </p>
+
+                    <p>
+                        More photos.
+                    </p>
+
+                    <p>
+                        More adventures.
+                    </p>
+
+                    <p>
+                        More everything.
+                    </p>
+
+                    <p>
+                        Because December 2024 was only the beginning.
+                    </p>
+
+                    <p>
+                        So happy birthday, Kritika.
+                    </p>
+
+                    <p>
+                        Thank you for being my girl bestie.
+                    </p>
+
+                    <p>
+                        And yes...
+                    </p>
+
+                    <p>
+                        unfortunately for you,
+                    </p>
+
+                    <p>
+                        you're stuck with me.
+                    </p>
+
+                    <p class="letter-heart">
+                        ♡
+                    </p>
+
+                </div>
+
+                <div class="real-letter-signature">
+                    Your permanently stuck-with-your bestie ♡
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     06 — MEMORY WALL
+========================================================= -->
+
+        <section class="section memories-section" id="memories">
+
+            <div class="side-deco deco-left" style="top:8%">
+                <div class="deco-cupcake tint-sage">
+                    <div class="cup-base"></div>
+                    <div class="cup-frosting"></div>
+                    <div class="cup-cherry"></div>
+                </div>
+            </div>
+            <div class="side-deco deco-left" style="top:80%">
+                <div class="mini-balloon size-sm tint-blue" style="--deco-rotate:6deg"></div>
+            </div>
+            <div class="side-deco deco-right" style="top:14%">
+                <div class="flower size-md tint-sage" style="--deco-rotate:-8deg">
+                    <span class="petal"></span><span class="petal"></span><span class="petal"></span><span
+                        class="petal"></span><span class="petal"></span>
+                    <i class="pistil"></i>
+                </div>
+            </div>
+            <div class="side-deco deco-right" style="top:84%">
+                <div class="mini-balloon size-md tint-blue" style="--deco-rotate:-5deg"></div>
+            </div>
+
+            <div class="memory-confetti"></div>
+
+
+            <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+            <div class="section-heading reveal">
+
+                <span>06</span>
+
+                <p>
+                    Proof that we actually have memories
+                </p>
+
+                <h2>
+                    Little pieces of us.
+                </h2>
+
+            </div>
+
+
+            <div class="memory-intro reveal">
+
+                <p>
+                    Replace these photos with yours.
+                    I've intentionally made this more like a scrapbook
+                    than a boring photo grid.
+                </p>
+
+            </div>
+
+
+            <div class="memory-wall">
+
+                <!-- Local photos -->
+
+                <figure class="memory-photo photo-a reveal-3d" data-caption="One of the many memories.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo1.jpg" alt="">
+
+                    <figcaption>
+                        memory no. 01
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="memory-photo photo-b reveal-3d" data-caption="Still one of my favourite memories.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo2.jpg" alt="">
+
+                    <figcaption>
+                        remember this?
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="memory-photo photo-c reveal-3d" data-caption="Another page from the story.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo3.jpg" alt="">
+
+                    <figcaption>
+                        somehow we survived
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="memory-photo photo-d reveal-3d" data-caption="More memories waiting to happen.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo4.jpg" alt="">
+
+                    <figcaption>
+                        more to come
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="memory-photo photo-e reveal-3d" data-caption="A little piece of the chaos.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo5.jpg" alt="">
+
+                    <figcaption>
+                        us
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="memory-photo photo-f reveal-3d" data-caption="And another one.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo6.jpg" alt="">
+
+                    <figcaption>
+                        page six
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="memory-photo photo-g reveal-3d" data-caption="A little retro nostalgia.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo7.jpg" alt="">
+
+                    <figcaption>
+                        one for the scrapbook
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="memory-photo photo-h reveal-3d" data-caption="Another little memory-inspired moment.">
+
+                    <div class="photo-tape"></div>
+
+                    <img src="photos/photo8.jpg" alt="">
+
+                    <figcaption>
+                        old-school energy
+                    </figcaption>
+
+                </figure>
+
+
+                <div class="scrap-note note-memory-a">
+                    December 2024
+                </div>
+
+                <div class="scrap-note note-memory-b">
+                    still laughing
+                </div>
+
+                <div class="scrap-note note-memory-c">
+                    next chapter
+                </div>
+
+                <div class="scrap-flower">
+                    <i></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     07 — WISH
+========================================================= -->
+
+        <section class="section wish-section" id="wish">
+            <div class="side-deco deco-right" style="top:60%">
+                <div class="mini-balloon size-sm tint-yellow" style="--deco-rotate:7deg"></div>
+            </div>
+
+            <div class="side-deco deco-left" style="top:10%">
+                <div class="mini-balloon size-md tint-blue" style="--deco-rotate:-6deg; top:500px; left:75px;"></div>
+            </div>
+
+            <div class="wish-stars" id="wishStars"></div>
+
+            <div class="wish-moon"></div>
+
+
+            <div class="wish-content reveal">
+
+                <div class="chapter-divider" aria-hidden="true"><span></span></div>
+
+                <div class="wish-label">
+                    One more thing
+                </div>
+
+                <h2>
+                    Make My Wish
+                </h2>
+
+                <p>
+                    There's one thing I really want for you this year.
+                </p>
+
+
+                <button class="wish-button magnetic" id="wishButton">
+                    Make the wish
+                </button>
+
+
+                <div class="wish-note" id="wishNote">
+
+                    <div class="wish-paper-tape"></div>
+
+                    <span>
+                        My wish for you
+                    </span>
+
+                    <p>
+                        I hope this year is gentle with you.
+                        I hope you laugh until your stomach hurts,
+                        find reasons to be proud of yourself,
+                        experience things you've never experienced before,
+                        and realise just how many people are lucky
+                        to have you in their lives.
+                    </p>
+
+                    <strong>
+                        And yes, I hope I get to be around
+                        for a lot of it.
+                    </strong>
+
+                    <small>
+                        — permanently stuck-with-you bestie
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-balloons">
+
+            <div class="footer-balloon fb-one size-md"></div>
+            <div class="footer-balloon fb-two size-sm"></div>
+            <div class="footer-balloon fb-three size-lg"></div>
+            <div class="footer-balloon fb-four size-sm"></div>
+            <div class="footer-balloon fb-five size-md"></div>
+
+        </div>
+
+
+        <div class="footer-content reveal">
+
+            <div class="footer-line">
+                Fight <span>·</span>
+                Fix <span>·</span>
+                Laugh <span>·</span>
+                Repeat
+            </div>
+
+            <div class="footer-year">
+                December 2024 → ∞
+            </div>
+
+            <h2>
+                Happy Birthday, Zuzu.
+            </h2>
+
+            <p>
+                Your permanently stuck-with-you bestie
+            </p>
+
+            <button class="replay-button magnetic" id="replayButton">
+                Replay everything
+            </button>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+     LIGHTBOX
+========================================================= -->
+
+    <div class="lightbox" id="lightbox">
+
+        <button class="lightbox-close" id="lightboxClose">
+            ×
+        </button>
+
+        <img id="lightboxImage" src="" alt="Memory">
+
+        <p id="lightboxCaption"></p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
